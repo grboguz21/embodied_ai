@@ -41,6 +41,11 @@ According to the research, a VLA is essentially a **VLM (Vision-Language Model) 
 
 ## 3. Simulation & Inference
 
+In order to run inference, navigate to smolvla_project and run the command below: 
+
+    python inference.py
+
+
 
 
 TASK 2
