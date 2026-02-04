@@ -1,0 +1,293 @@
+<mujoco model="Scanned Objects">
+  <!-- Memory? -->
+  <compiler angle="radian"/>
+  <option integrator="implicitfast" noslip_iterations="20"/>
+  <size memory="500M"/>
+  <visual>
+    <headlight ambient="0.3 0.3 0.3" diffuse="0.6 0.6 0.6" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+  </visual>
+  <default class="main">
+    <joint armature="0.1" damping="0.1"/>
+    <default class="visual_only">
+      <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+    </default>
+    <default class="no_visual_collision">
+      <geom type="capsule" group="3" solref="0.015" solimp="0.9 0.99"/>
+    </default>
+    <default class="visual_collision">
+      <geom type="mesh" group="2" solref="0.015" solimp="0.9 0.99"/>
+    </default>
+    <default class="Y">
+      <joint range="-6.28319 6.28319" damping="100"/>
+      <general ctrlrange="-6.28319 6.28319" forcerange="-2000 2000" biastype="affine" gainprm="5000" biasprm="0 -5000"/>
+    </default>
+    <default class="gripper">
+      <joint damping="10"/>
+      <general forcerange="-100 100" biastype="affine" gainprm="1000" biasprm="0 -1000"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.9 0.9 0.9" rgb2="0.8 0.8 0.8" markrgb="0.8 0.8 0.8" width="1000" height="1000"/>
+    <texture type="2d" name="light_wood" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./tabletop/object/../mesh/light_wood_v3.png"/>
+    <texture type="2d" name="mug_50" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/visual/image0.png"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" reflectance="0.1"/>
+    <material name="wood_table_mat" texture="light_wood" rgba="0.5 0.5 0.5 1"/>
+    <material name="m_mug_mug_5" texture="mug_50" shininess="0.36"/>
+    <material name="Material.387_plate_11" shininess="0.36" rgba="0.8 0.8 0.8 1"/>
+    <mesh name="base_unit" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/base_unit.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link1" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/link1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link2" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/link2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link3" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/link3.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link4" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/link4.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link5" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/link5.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link6" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/link6.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="flange" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/flange.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="base" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/base.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="r1" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/r1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="r2" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/r2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="l1" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/l1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="l2" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./robotis_omy/assets/l2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="mug_5_normalized_0_vis" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/visual/model_normalized_0.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_22._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_22.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_23._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_23.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_21._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_21.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_20._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_20.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_24._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_24.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_30._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_30.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_18._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_18.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_19._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_19.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_31._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_31.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_25._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_25.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_27._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_27.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_26._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_26.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_9._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_9.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_8._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_8.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_6._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_6.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_7._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_7.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_5._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_5.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_4._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_4.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_0._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_0.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_1._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_1.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_3._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_3.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_2._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_2.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_17._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_17.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_16._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_16.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_28._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_28.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_14._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_14.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_15._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_15.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_29._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_29.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_11._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_11.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_10._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_10.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_12._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_12.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="mug_5_normalized_collision_13._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/mug_5/collision/model_normalized_collision_13.obj" refquat="0.707107 0 0 0.707107" scale="0.12 0.12 0.12"/>
+    <mesh name="plate_11_normalized_0_vis" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/visual/model_normalized_0.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_22._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_22.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_23._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_23.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_21._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_21.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_20._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_20.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_24._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_24.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_30._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_30.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_18._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_18.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_19._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_19.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_31._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_31.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_25._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_25.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_27._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_27.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_26._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_26.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_9._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_9.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_8._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_8.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_6._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_6.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_7._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_7.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_5._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_5.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_4._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_4.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_0._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_0.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_1._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_1.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_3._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_3.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_2._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_2.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_17._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_17.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_16._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_16.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_28._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_28.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_14._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_14.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_15._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_15.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_29._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_29.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_11._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_11.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_10._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_10.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_12._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_12.obj" scale="0.24975 0.24975 0.24975"/>
+    <mesh name="plate_11_normalized_collision_13._coll" file="/home/oguz/monitize_vla/lerobot-mujoco-tutorial/asset/./objaverse/plate_11/collision/model_normalized_collision_13.obj" scale="0.24975 0.24975 0.24975"/>
+  </asset>
+  <worldbody>
+    <geom name="floor" size="0 0 0.05" type="plane" group="1" material="groundplane"/>
+    <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="base_unit"/>
+    <light pos="1 -1 1.5" dir="-0.57735 0.57735 -0.57735" directional="true" diffuse="0.5 0.5 0.5"/>
+    <body name="front_object_table">
+      <inertial pos="0 0 0" mass="1" diaginertia="0 0 0"/>
+      <geom name="front_object_table" size="1 0.7 0.4" pos="0.5 0 0.4" type="box" material="wood_table_mat"/>
+      <body name="camera" pos="0.8 0 1.2">
+        <camera name="agentview" pos="0 0 0" quat="0.627975 0.325035 0.325035 0.627975" fovy="60"/>
+      </body>
+      <body name="camera2" pos="0.5 0 1.8">
+        <camera name="topview" pos="0 0 0" quat="0.707107 0 0 -0.707107" fovy="90"/>
+      </body>
+      <body name="camera3" pos="0.3 -0.7 1.3">
+        <camera name="sideview" pos="0 0 0" quat="0.707107 0.707107 0 0" fovy="90"/>
+      </body>
+    </body>
+    <body name="link1" pos="0 0 0.8715">
+      <inertial pos="-0.000110636 -0.00547113 -0.0158977" quat="0.98558 0.168758 -0.00294757 0.0120358" mass="2.06488" diaginertia="0.00303337 0.00279081 0.00221937"/>
+      <joint name="joint1" class="Y" pos="0 0 0" axis="0 0 1"/>
+      <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="link1"/>
+      <body name="link2" pos="0 -0.1215 0">
+        <inertial pos="1.14054e-05 0.0161842 0.103606" quat="0.999988 -0.00477885 -0.000609836 0.00067321" mass="3.67954" diaginertia="0.051732 0.0503576 0.00449718"/>
+        <joint name="joint2" class="Y" pos="0 0 0" axis="0 1 0"/>
+        <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="link2"/>
+        <body name="link3" pos="0 0 0.247">
+          <inertial pos="7.81487e-05 0.107185 0.141173" quat="0.999987 0.00500823 0.000469041 -0.00072733" mass="2.38659" diaginertia="0.0226944 0.021922 0.00277422"/>
+          <joint name="joint3" class="Y" pos="0 0 0" axis="0 1 0"/>
+          <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="link3"/>
+          <body name="link4" pos="0 0.1215 0.2195">
+            <inertial pos="-0.000133183 -0.107467 0.0190907" quat="0.983636 0.179196 0.00338061 -0.0183488" mass="1.40023" diaginertia="0.00175475 0.00162284 0.00115817"/>
+            <joint name="joint4" class="Y" pos="0 0 0" axis="0 1 0"/>
+            <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="link4"/>
+            <body name="link5" pos="0 -0.113 0">
+              <inertial pos="0.000133183 -0.0190907 0.109967" quat="0.822247 0.568825 0.0105841 -0.015365" mass="1.40023" diaginertia="0.00175475 0.00162284 0.00115817"/>
+              <joint name="joint5" class="Y" pos="0 0 0" axis="0 0 1"/>
+              <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="link5"/>
+              <body name="link6" pos="0 0 0.1155">
+                <inertial pos="1.6005e-05 -0.103085 0.00570277" quat="0.456875 0.889528 0.00170634 -0.00130773" mass="0.652774" diaginertia="0.00112656 0.000847594 0.000551829"/>
+                <joint name="joint6" class="Y" pos="0 0 0" axis="0 1 0"/>
+                <geom type="mesh" rgba="0.2 0.2 0.2 1" mesh="link6"/>
+                <geom pos="0 -0.103 0" type="mesh" rgba="0.2 0.2 0.2 1" mesh="flange"/>
+                <geom pos="0 -0.109 0" quat="0.500398 0.5 0.5 -0.499602" type="mesh" mesh="base"/>
+                <body name="camera_center" pos="0 -0.09 0.1">
+                  <geom size="0.005 0.005 0.005" type="box" contype="0" conaffinity="0" rgba="1 0 0 0"/>
+                  <camera name="egocentric" pos="0 0 0" quat="0 0 0.707107 0.707107" fovy="90"/>
+                </body>
+                <body name="tcp_link" pos="0 -0.22 0">
+                  <geom size="0.01 0.5" quat="0 1 0 0" type="capsule" contype="0" conaffinity="0" rgba="1 0.2 0.2 0"/>
+                </body>
+                <body name="rh_p12_rn_r1" pos="0.00803822 -0.156994 6.40105e-06" quat="0.500398 0.5 0.5 -0.499602">
+                  <inertial pos="0 0.034 0.004" mass="0.068" diaginertia="1e-06 1e-06 1e-06"/>
+                  <joint name="rh_r1" class="gripper" pos="0 0 0" axis="1 0 0" range="0 1.1"/>
+                  <geom type="mesh" mesh="r1"/>
+                  <body name="rh_p12_rn_r2" pos="0 0.0493634 0.0285">
+                    <inertial pos="0 0.006 0.011" mass="0.022" diaginertia="1e-06 1e-06 1e-06"/>
+                    <joint name="rh_r2" class="gripper" pos="0 0 0" axis="-1 0 0" range="0 1"/>
+                    <geom type="mesh" mesh="r2"/>
+                  </body>
+                </body>
+                <body name="rh_p12_rn_l1" pos="-0.00796177 -0.157006 -6.34017e-06" quat="0.500398 0.5 0.5 -0.499602">
+                  <inertial pos="0 -0.034 0.004" mass="0.068" diaginertia="1e-06 1e-06 1e-06"/>
+                  <joint name="rh_l1" class="gripper" pos="0 0 0" axis="-1 0 0" range="0 1.1"/>
+                  <geom type="mesh" mesh="l1"/>
+                  <body name="rh_p12_rn_l2" pos="0 -0.0493634 0.0285">
+                    <inertial pos="0 -0.006 0.011" mass="0.022" diaginertia="1e-06 1e-06 1e-06"/>
+                    <joint name="rh_l2" class="gripper" pos="0 0 0" axis="1 0 0" range="0 1"/>
+                    <geom type="mesh" mesh="l2"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="body_obj_mug_5">
+      <joint type="free" limited="false" actuatorfrclimited="false" armature="0" damping="0"/>
+      <site name="bottom_site_mug_5" pos="4.2439e-05 7.8871e-05 -0.0428076" rgba="0 0 0 0"/>
+      <site name="top_site_mug_5" pos="4.2439e-05 7.8871e-05 0.0426289" rgba="0 0 0 0"/>
+      <site name="horizontal_radius_site_mug_5" pos="0.0420348 0.0565321 -8.93377e-05" rgba="0 0 0 0"/>
+      <body name="object_mug_5">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" material="m_mug_mug_5" mesh="mug_5_normalized_0_vis"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_22._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_23._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_21._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_20._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_24._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_30._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_18._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_19._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_31._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_25._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_27._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_26._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_9._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_8._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_6._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_7._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_5._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_4._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_0._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_1._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_3._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_2._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_17._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_16._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_28._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_14._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_15._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_29._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_11._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_10._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_12._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="mug_5_normalized_collision_13._coll"/>
+      </body>
+    </body>
+    <body name="body_obj_plate_11">
+      <joint type="free" limited="false" actuatorfrclimited="false" armature="0" damping="0"/>
+      <site name="bottom_site_plate_11" pos="1.85e-09 1.85e-09 -0.00589835" rgba="0 0 0 0"/>
+      <site name="top_site_plate_11" pos="1.85e-09 1.85e-09 0.00578923" rgba="0 0 0 0"/>
+      <site name="horizontal_radius_site_plate_11" pos="0.0912272 0.0912272 -5.45583e-05" rgba="0 0 0 0"/>
+      <body name="object_plate_11">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" material="Material.387_plate_11" mesh="plate_11_normalized_0_vis"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_22._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_23._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_21._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_20._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_24._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_30._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_18._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_19._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_31._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_25._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_27._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_26._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_9._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_8._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_6._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_7._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_5._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_4._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_0._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_1._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_3._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_2._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_17._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_16._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_28._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_14._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_15._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_29._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_11._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_10._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_12._coll"/>
+        <geom type="mesh" group="3" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" density="100" rgba="0.8 0.8 0.8 0" mesh="plate_11_normalized_collision_13._coll"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="world" body2="link1"/>
+  </contact>
+  <actuator>
+    <general name="actuator_joint1" class="Y" joint="joint1"/>
+    <general name="actuator_joint2" class="Y" joint="joint2"/>
+    <general name="actuator_joint3" class="Y" joint="joint3"/>
+    <general name="actuator_joint4" class="Y" joint="joint4"/>
+    <general name="actuator_joint5" class="Y" joint="joint5"/>
+    <general name="actuator_joint6" class="Y" joint="joint6"/>
+    <general name="actuator_rh_r1" class="gripper" joint="rh_r1" ctrlrange="0 1.1" gainprm="500" biasprm="0 -500"/>
+    <general name="actuator_rh_r2" class="gripper" joint="rh_r2" ctrlrange="0 1" gainprm="500" biasprm="0 -500"/>
+    <general name="actuator_rh_l1" class="gripper" joint="rh_l1" ctrlrange="0 1.1" gainprm="500" biasprm="0 -500"/>
+    <general name="actuator_rh_l2" class="gripper" joint="rh_l2" ctrlrange="0 1" gainprm="500" biasprm="0 -500"/>
+  </actuator>
+</mujoco>
