@@ -17,8 +17,6 @@ This repository contains research and notes on modern robotics frameworks and Em
 | **Logic** | Hand-coded algorithms and heuristics | Data-driven (Imitation/Reinforcement Learning) |
 | **Input/Output** | Multi-stage data transformation | Sensor Data $\rightarrow$ Policy $\rightarrow$ Motor Command |
 
-> **Summary:** While traditional systems rely on a "chain" of distinct modules (e.g., Object Detection > Coordinate Calculation > Path Planning), LeRobot simplifies this into a unified infrastructure where the model learns to map sensor inputs directly to actions.
-
 ---
 
 ## 2. SmolVLA: Vision-Language-Action Architecture
