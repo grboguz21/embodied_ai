@@ -2,7 +2,6 @@
 
 This repository contains research and notes on modern robotics frameworks and Embodied AI models, specifically focusing on **LeRobot** and **Vision-Language-Action (VLA)** architectures.
 
----
 
 ## 1. LeRobot: A Unified Framework for Robotics
 
