@@ -37,18 +37,6 @@ According to the research, a VLA is essentially a **VLM (Vision-Language Model) 
 | **Vision** | Images | Labels / Segments | Spatial understanding |
 | **VLA** | Image + Text + State | **Robot Actions** | Physical Embodiment & Interaction |
 
-> **The "Action" Factor:** For AI to move from the digital world to the physical world, it needs "Embodiment." VLA models enable this by converting textual instructions and visual perception directly into robotic motion.
-
----
-
-## Technical Context
-* **Simulation Environments:** MuJoCo, Gazebo.
-* **Frameworks:** ROS 2, PyTorch, LeRobot.
-* **Robotic Platforms:** UR3e, Panda, Trossen VX300s.
-
-
-------------------
-
 
 TASK 2
 ------------------
@@ -67,3 +55,13 @@ replace the lines (46-49) with the following code:
     self.target_position.x = 1.0
     self.target_position.y = 1.0
     self.target_position.z = 0.0
+
+
+---
+
+## Technical Context
+* **Simulation Environments:** MuJoCo, Gazebo.
+* **Frameworks:** ROS 2, PyTorch, LeRobot.
+* **Robotic Platforms:** UR3e, Panda, Trossen VX300s.
+
+
