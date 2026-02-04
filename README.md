@@ -37,6 +37,11 @@ According to the research, a VLA is essentially a **VLM (Vision-Language Model) 
 | **Vision** | Images | Labels / Segments | Spatial understanding |
 | **VLA** | Image + Text + State | **Robot Actions** | Physical Embodiment & Interaction |
 
+---
+
+## 3. Simulation & Inference
+
+
 
 TASK 2
 ------------------
