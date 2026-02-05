@@ -88,7 +88,7 @@ You can check out the axis-based motion tests of the robotic arm below: [Youtube
 
 ## Resources
 * **MuJoCo Simulation:** [MuJoCo.](https://github.com/sjchoi86/yet-another-mujoco-tutorial-v3/tree/main)
-* **LeRobot, SmolVLA:** [ROS 2, PyTorch, LeRobot.](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
+* **LeRobot, SmolVLA:** [ROS 2, PyTorch, LeRobot.](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie?tab=readme-ov-file#applications)
 ---
 
 ## Future Work
