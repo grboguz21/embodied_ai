@@ -62,7 +62,7 @@ In order to run inference, navigate to smolvla_project and run the command below
 
 ---
 
-## 5. Teleoperating Viperx300s with Hand Landmarks 
+## 5. Teleoperating Trossen VX300s with Hand Landmarks 
 ![Short Demo](demo.gif)
 
 In order to control Viperx300s robot with hand landmarks, navigate to teleop_with_hand_gestures and run the command below: 
@@ -76,11 +76,9 @@ You can check out the full demo of the pouring motion with the robotic arm here:
 
 ## 🎥 II. Translation and Orientation Tests on Selected Axes
 You can check out the axis-based motion tests of the robotic arm below.  
+[Youtube](https://www.youtube.com/watch?v=zEXLi-rsG9Y)
 
 ![Short Demo](test_axis.gif)
-
-Full demo video:  
-[Youtube](https://www.youtube.com/watch?v=zEXLi-rsG9Y)
 
 
 ---
