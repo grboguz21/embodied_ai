@@ -50,6 +50,7 @@ To run inference and simulation, first create and activate the Conda environment
 Then, install all required dependencies using the provided requirements.txt file:
     
     pip install -r requirements.txt
+
 ---
 
 ## 4. Simulation & Inference 
@@ -59,29 +60,36 @@ In order to run inference, navigate to smolvla_project and run the command below
 
     python inference.py
 
-
+---
 
 ## 5. Teleoperating Viperx300s with Hand Landmarks 
-xxxxxx
-
 ![Short Demo](demo.gif)
 
-## 🎥 Demo Video
+In order to control Viperx300s robot with hand landmarks, navigate to teleop_with_hand_gestures and run the command below: 
+    
+    python run.py
+
+
+## 🎥 Full Demo Video
 [You can checkout the full demo](https://www.youtube.com/watch?v=4zft4P67SN4)
-
-
 
 
 ---
 ## Technical Context
 * **Simulation Environments:** MuJoCo, Gazebo.
-* **Frameworks:** ROS 2, PyTorch, LeRobot.
-* **Robotic Platforms:** UR3e, Panda, Trossen VX300s.
+* **Frameworks:** PyTorch, LeRobot.
+* **Robotic Platforms:** OpenMANIPULATOR-Y, Trossen VX300s.
 ---
 
 ## Resources
-* **Simulation Environments:** MuJoCo, Gazebo.
-* **Frameworks:** ROS 2, PyTorch, LeRobot.
-* **Robotic Platforms:** UR3e, Panda, Trossen VX300s.
+* **LeRobot, SmolVLA:** [MuJoCo, Gazebo.](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
+* **MuJoCo:** [ROS 2, PyTorch, LeRobot.](https://github.com/ROBOTIS-GIT/robotis_mujoco_menagerie)
+---
+
+## Future Work
+* **Camera Calibration**
+* **Algorithmic Improvements**
+* **Stereo Camera / RGB-D Point Cloud Data** 
+
 
 
