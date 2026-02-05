@@ -55,6 +55,7 @@ Then, install all required dependencies using the provided requirements.txt file
 
 ## 4. Simulation & Inference 
 ![Short Demo](smolvla_inference_demo.gif)
+
 You can check out the full demo here: [Youtube](https://youtu.be/jtYhvCqHEVI)
 In order to run inference, navigate to smolvla_project and run the command below: 
 
