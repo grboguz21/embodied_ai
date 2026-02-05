@@ -76,7 +76,7 @@ In order to control Viperx300s robot with hand landmarks, navigate to teleop_wit
 
 ---
 ## Technical Context
-* **Simulation Environments:** MuJoCo, Gazebo.
+* **Simulation Environments:** MuJoCo.
 * **Frameworks:** PyTorch, LeRobot.
 * **Robotic Platforms:** OpenMANIPULATOR-Y, Trossen VX300s.
 ---
