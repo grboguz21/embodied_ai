@@ -52,19 +52,9 @@ TASK 2
 ------------------
 xxxxxx
 
-replace the lines (46-49) with the following code:
+## 🎥 Demo Video
+[You can checkout the demo video]([https://github.com/USERNAME/REPO/releases](https://github.com/grboguz21/embodied_ai/blob/main/teleop_with_hand_gestures.mp4))
 
-    self.target_position = Point()
-    self.target_position.x = 0.5
-    self.target_position.y = 0.0
-    self.target_position.z = 0.0
-
-    --------- or ---------------
-
-    self.target_position = Point()
-    self.target_position.x = 1.0
-    self.target_position.y = 1.0
-    self.target_position.z = 0.0
 
 
 ---
