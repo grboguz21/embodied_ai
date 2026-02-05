@@ -40,17 +40,28 @@ According to the research, a VLA is essentially a **VLM (Vision-Language Model) 
 
 ---
 
-## 3. Simulation & Inference 
+## 3. Environment Setup
+
+To run inference and simulation, first create and activate the Conda environment:
+
+    conda create -n lerobot_env python=3.10 -y
+    conda activate lerobot_env
+
+Then, install all required dependencies using the provided requirements.txt file:
+    
+    pip install -r requirements.txt
+---
+
+## 4. Simulation & Inference 
 ![Short Demo](smolvla_inference_demo.gif)
+
 In order to run inference, navigate to smolvla_project and run the command below: 
 
     python inference.py
 
 
 
-
-TASK 2
-------------------
+## 5. Teleoperating Viperx300s with Hand Landmarks 
 xxxxxx
 
 ![Short Demo](demo.gif)
@@ -62,8 +73,13 @@ xxxxxx
 
 
 ---
-
 ## Technical Context
+* **Simulation Environments:** MuJoCo, Gazebo.
+* **Frameworks:** ROS 2, PyTorch, LeRobot.
+* **Robotic Platforms:** UR3e, Panda, Trossen VX300s.
+---
+
+## Resources
 * **Simulation Environments:** MuJoCo, Gazebo.
 * **Frameworks:** ROS 2, PyTorch, LeRobot.
 * **Robotic Platforms:** UR3e, Panda, Trossen VX300s.
