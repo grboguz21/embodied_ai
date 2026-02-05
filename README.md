@@ -70,7 +70,9 @@ In order to control Viperx300s robot with hand landmarks, navigate to teleop_wit
     python run.py
 
 
-## 🎥 Full Demo Video
+## 🎥 I. Full Demo Video
+[You can checkout the full demo](https://www.youtube.com/watch?v=4zft4P67SN4)
+## 🎥 II. Translation and Orientation Tests
 [You can checkout the full demo](https://www.youtube.com/watch?v=4zft4P67SN4)
 
 
