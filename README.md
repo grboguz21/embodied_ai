@@ -52,8 +52,10 @@ TASK 2
 ------------------
 xxxxxx
 
+![Short Demo](demo.gif)
+
 ## 🎥 Demo Video
-[You can checkout the demo video](https://github.com/grboguz21/embodied_ai/blob/main/teleop_with_hand_gestures.mp4)
+[You can checkout the full demo](https://www.youtube.com/watch?v=4zft4P67SN4)
 
 
 
