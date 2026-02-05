@@ -59,7 +59,7 @@ Then, install all required dependencies using the provided requirements.txt file
 In order to run inference, navigate to smolvla_project and run the command below: 
 
     python inference.py
-
+> **Note:** Some file paths may need to be adjusted depending on your system configuration.
 ---
 
 ## 5. Teleoperating Trossen VX300s with Hand Landmarks 
@@ -68,7 +68,7 @@ In order to run inference, navigate to smolvla_project and run the command below
 In order to control Viperx300s robot with hand landmarks, navigate to teleop_with_hand_gestures and run the command below: 
     
     python run.py
-
+> **Note:** Some file paths may need to be adjusted depending on your system configuration.
 
 ## 🎥 I. Full Demo
 You can check out the full demo of the pouring motion with the robotic arm here:  
