@@ -71,12 +71,10 @@ In order to control Viperx300s robot with hand landmarks, navigate to teleop_wit
 > **Note:** Some file paths may need to be adjusted depending on your system configuration.
 
 ## 🎥 I. Full Demo
-You can check out the full demo of the pouring motion with the robotic arm here:  
-[Youtube](https://www.youtube.com/watch?v=4zft4P67SN4)
+You can check out the full demo of the pouring motion with the robotic arm here: [Youtube](https://www.youtube.com/watch?v=4zft4P67SN4)
 
 ## 🎥 II. Translation and Orientation Tests on Selected Axes
-You can check out the axis-based motion tests of the robotic arm below:  
-[Youtube](https://www.youtube.com/watch?v=zEXLi-rsG9Y)
+You can check out the axis-based motion tests of the robotic arm below: [Youtube](https://www.youtube.com/watch?v=zEXLi-rsG9Y)
 ![Short Demo](test_axis.gif)
 
 ---
