@@ -62,7 +62,7 @@ In order to run inference, navigate to smolvla_project and run the command below
 > **Note:** Some file paths may need to be adjusted depending on your system configuration.
 ---
 
-## 5. Teleoperating Trossen VX300s with Hand Landmarks 
+## 5. Teleoperating VX300s with Hand Landmarks 
 ![Short Demo](demo.gif)
 
 In order to control Viperx300s robot with hand landmarks, navigate to teleop_with_hand_gestures and run the command below: 
