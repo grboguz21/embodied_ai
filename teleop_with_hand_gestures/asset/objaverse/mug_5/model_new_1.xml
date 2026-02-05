@@ -1,0 +1,25 @@
+<mujoco model="mug_70_optimized">
+  <asset>
+    <mesh file="visual/model_normalized_0.obj" name="mug_vis_mesh" scale="0.10 0.10 0.15" refquat="0.7071 0 0 0.7071" />
+    <texture type="2d" name="mug_tex" file="visual/image0.png" />
+    <material name="m_mug" texture="mug_tex" specular="0.5" shininess="0.36" />
+  </asset>
+
+  <worldbody>
+    <body name="body_obj_mug_5" euler="0 90 90">
+      <freejoint />
+      
+      <geom type="mesh" mesh="mug_vis_mesh" material="m_mug" conaffinity="0" contype="0" group="2" />
+
+      <geom name="col_body" type="cylinder" size="0.04 0.075" pos="0 0 0" 
+            density="100" friction="0.95 0.3 0.1" group="3" rgba="0 0 0 0" />
+
+      <geom name="col_handle" type="box" size="0.01 0.02 0.04" pos="0.05 0 0" 
+            density="10" friction="0.95 0.3 0.1" group="3" rgba="0 0 0 0" />
+
+      <site name="bottom_site" pos="0 0 -0.075" size="0.005" rgba="0 0 0 0" />
+      <site name="top_site" pos="0 0 0.075" size="0.005" rgba="0 0 0 0" />
+      <site name="handle_site" pos="0.05 0 0" size="0.005" rgba="0 0 0 0" />
+    </body>
+  </worldbody>
+</mujoco>
