@@ -84,6 +84,7 @@ lastly run the python script below:
     python inference.py
 
 > **Note:** You can check out the inference_tutorial.ipynb notebook in smolvla_project directory if you are curious about how this script was developed.
+
 > **Note:** If you get any error, some file paths may need to be adjusted depending on your system configuration.
 ---
 
