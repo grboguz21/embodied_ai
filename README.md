@@ -58,9 +58,13 @@ Then, install all required dependencies using the provided requirements.txt file
 
 You can check out the full demo here: [Youtube](https://youtu.be/jtYhvCqHEVI)
 
+First of all clone the repo and go to smolvla_project folder:
+    
+    git clone https://github.com/grboguz21/embodied_ai.git
+    cd embodied_ai/smolvla_project
+    
 In order to run inference, download the models data first: 
 
-    cd smolvla_project
     !git clone https://huggingface.co/datasets/Jeongeun/omy_pnp_language
 
 and unzip the necessary models:
