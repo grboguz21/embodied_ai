@@ -65,7 +65,7 @@ First of all clone the repo and go to smolvla_project folder:
     
 In order to run inference, download the models data first: 
 
-    !git clone https://huggingface.co/datasets/Jeongeun/omy_pnp_language
+    git clone https://huggingface.co/datasets/Jeongeun/omy_pnp_language
 
 and unzip the necessary models:
 
