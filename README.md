@@ -58,10 +58,25 @@ Then, install all required dependencies using the provided requirements.txt file
 
 You can check out the full demo here: [Youtube](https://youtu.be/jtYhvCqHEVI)
 
-In order to run inference, navigate to smolvla_project and run the command below: 
+In order to run inference, download the models data first: 
+
+    cd smolvala_project
+    !git clone https://huggingface.co/datasets/Jeongeun/omy_pnp_language
+
+and unzip the necessary models:
+
+    cd embodied_ai/smolvla_project/asset/objaverse
+    unzip plate_11.zip
+
+then go back to the smolvla_project folder:
+
+    cd ../..
+
+lastly run the python script below:
 
     python inference.py
-> **Note:** Some file paths may need to be adjusted depending on your system configuration.
+
+> **Note:** If you get any error, some file paths may need to be adjusted depending on your system configuration.
 ---
 
 ## 5. Teleoperating ViperX300s with Hand Landmarks
