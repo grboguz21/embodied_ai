@@ -60,7 +60,7 @@ You can check out the full demo here: [Youtube](https://youtu.be/jtYhvCqHEVI)
 
 In order to run inference, download the models data first: 
 
-    cd smolvala_project
+    cd smolvla_project
     !git clone https://huggingface.co/datasets/Jeongeun/omy_pnp_language
 
 and unzip the necessary models:
