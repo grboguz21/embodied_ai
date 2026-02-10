@@ -47,10 +47,14 @@ To run inference and simulation, first create and activate the Conda environment
     conda create -n lerobot_env python=3.10 -y
     conda activate lerobot_env
 
-Then, install all required dependencies using the provided requirements.txt file:
+Clone the repo and navigate to the main project folder like below:
     
-    pip install -r requirements.txt
+    git clone https://github.com/grboguz21/embodied_ai.git
+    cd embodied_ai
 
+Then, install all required dependencies using the provided requirements.txt file:
+
+    pip install -r requirements.txt
 ---
 
 ## 4. Simulation & Inference 
@@ -58,9 +62,8 @@ Then, install all required dependencies using the provided requirements.txt file
 
 You can check out the full demo here: [Youtube](https://youtu.be/jtYhvCqHEVI)
 
-First of all clone the repo and go to smolvla_project folder:
+Navigate to smolvla_project directory in the main folder(embodied_ai):
     
-    git clone https://github.com/grboguz21/embodied_ai.git
     cd embodied_ai/smolvla_project
     
 In order to run inference, download the models data first: 
