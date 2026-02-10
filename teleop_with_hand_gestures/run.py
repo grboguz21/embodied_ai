@@ -11,7 +11,8 @@ from mediapipe.tasks.python import vision
 import threading
 import time
 
-
+import argparse
+import sys
 
 class EMAFilter:
     def __init__(self, alpha=0.3):
@@ -236,31 +237,56 @@ def draw_landmarks_on_image(rgb_image, detection_result):
 
 
 # using IP Camera
-
-def camera_thread():
+def camera_thread(camera_source):
+    """    
+    Args:
+        camera_source (str): Camera index (example: "0") or IP URL.
+    """
     global action, gripper_state_, final_rel_angles, coords_
-    cap = cv2.VideoCapture("http://192.168.1.6:8080/video")
-    address = "https://192.168.1.6:8080/video"
-    cap.open(address)
-    # cap = cv2.VideoCapture(0)
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret:
-            break
-        frame = cv2.flip(frame, 1)
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
-        detection_result = detector.detect(mp_image)
-        
-        res = draw_landmarks_on_image(rgb_frame, detection_result)
-        annotated_frame, state_, final_rel_angles, coords_, _ = res
-        gripper_state_ = bool(state_)
+    
+    source = int(camera_source) if camera_source.isdigit() else camera_source
+    
+    cap = cv2.VideoCapture(source)
+    
+    if not cap.isOpened():
+        print(f"\n Error")
+        return
 
-        cv2.imshow('Hand Orientation', cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR))
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    cap.release()
-    cv2.destroyAllWindows()
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))   
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) 
+
+    try:
+        while cap.isOpened():
+            ret, frame = cap.read()
+            if not ret:
+                print("Error")
+                break
+            
+            frame = cv2.flip(frame, 1)
+            
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+            
+            detection_result = detector.detect(mp_image)            
+            annotated_frame, state_, f_angles, f_coords, _ = draw_landmarks_on_image(
+                rgb_frame, detection_result
+            )
+            
+            gripper_state_ = bool(state_)
+            final_rel_angles = f_angles
+            coords_ = f_coords
+
+            cv2.imshow('Hand Tracking & Teleop Control', cv2.cvtColor(annotated_frame, cv2.COLOR_RGB2BGR))
+            
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+    except Exception as e:
+        print(f"[HATA] Kamera döngüsünde bir hata oluştu: {e}")
+    finally:
+        # Kaynakları serbest bırak
+        cap.release()
+        cv2.destroyAllWindows()
+        print("[BİLGİ] Kamera thread'i sonlandırıldı.")
 
 
 def sim_thread():
@@ -321,7 +347,8 @@ def sim_thread():
             # Get the end-effector pose and images
             ee_pose = PnPEnv.get_ee_pose()
 
-            # İlk 3 eleman pozisyon (x, y, z), son 3 eleman rotasyon (roll, pitch, yaw)
+            # 
+            #  (x, y, z), son 3 eleman rotasyon (roll, pitch, yaw)
             # px, py, pz, roll, pitch, yaw = ee_pose
             # print(f"Pozisyon: X={px:.2f}, Y={py:.2f}, Z={pz:.2f}")
             # print(f"Rotasyon (Radyan): R={roll:.2f}, P={pitch:.2f}, Y={yaw:.2f}")
@@ -345,10 +372,26 @@ def sim_thread():
 
     PnPEnv.env.close_viewer()
 
-# Start threads
-t1 = threading.Thread(target=camera_thread)
-t2 = threading.Thread(target=sim_thread)
-t1.start()
-t2.start()
-t1.join()
-t2.join()
+if __name__ == "__main__":
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Robot Teleoperation")
+    parser.add_argument(
+        "--cam", 
+        type=str, 
+        default="0", 
+        help="Camera source: '0' veya 'http://192.168.1.6:8080/video'"
+    )
+    args = parser.parse_args()
+
+    t1 = threading.Thread(target=camera_thread, args=(args.cam,), daemon=True)
+    t2 = threading.Thread(target=sim_thread, daemon=True)
+    
+    t1.start()
+    t2.start()
+    
+    try:
+        while t1.is_alive() or t2.is_alive():
+            time.sleep(0.1)
+    except KeyboardInterrupt:
+        print("\n Stopped.")
