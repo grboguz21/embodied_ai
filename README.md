@@ -64,7 +64,7 @@ You can check out the full demo here: [Youtube](https://youtu.be/jtYhvCqHEVI)
 
 Navigate to smolvla_project directory in the main folder(embodied_ai):
     
-    cd embodied_ai/smolvla_project
+    cd ./smolvla_project
     
 In order to run inference, download the models data first: 
 
