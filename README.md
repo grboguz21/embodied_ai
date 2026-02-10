@@ -92,6 +92,7 @@ lastly run the python script below:
 In order to control Viperx300s robot with hand landmarks, navigate to teleop_with_hand_gestures and run the command below.
 
 Navigate to project folder:
+
     cd ./teleop_with_hand_gestures
 
 Teleop with Webcam:
