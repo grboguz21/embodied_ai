@@ -67,9 +67,9 @@ In order to run inference, download the models data first:
 
     git clone https://huggingface.co/datasets/Jeongeun/omy_pnp_language
 
-and unzip the necessary models:
+and unzip the necessary models in the objaverse folder:
 
-    cd embodied_ai/smolvla_project/asset/objaverse
+    cd ./asset/objaverse
     unzip plate_11.zip
 
 then go back to the smolvla_project folder:
